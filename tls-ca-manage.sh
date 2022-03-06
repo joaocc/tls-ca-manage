@@ -1291,7 +1291,7 @@ function ca_create_public_key
     if [[ ${VERBOSITY} -ne 0 ]]; then
         # View the private key in readable format
         openssl asn1parse -in "$IA_KEY_PEM"
-        openssl pkey \
+        ${OPENSSL_PKEY} \
             -in "$IA_KEY_PEM" \
             -noout \
             -text
